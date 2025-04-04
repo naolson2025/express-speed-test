@@ -6,7 +6,6 @@ export const schema = z.string().uuid();
 export const getBooksByIdValidator =
   () => (req: Request, res: Response, next: NextFunction) => {
     try {
-      console.log('Validating bookId:', req.params.bookId);
       const result = schema.safeParse(req.params.bookId);
 
       if (!result.success) {

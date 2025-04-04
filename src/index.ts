@@ -1,9 +1,10 @@
 import express, { type Request, type Response } from 'express';
-import { getBooksByPrice, getBookById } from './db/queries';
+import { getBooksByPrice, getBookById, createBook } from './db/queries';
 import { getBooksValidator } from './schemas/get-books-schema';
 import type { UUID } from 'crypto';
 import 'express';
 import { getBooksByIdValidator } from './schemas/get-book-by-id-schema';
+import { createBookValidator, type CreateBookSchema } from './schemas/create-book-schema';
 
 declare module 'express' {
   export interface Request {
@@ -40,6 +41,14 @@ app.get('/books/:bookId', getBooksByIdValidator(), (req: Request, res: Response)
   }
 
   res.status(200).json(book);
+});
+
+app.post('/books', createBookValidator(), (req: Request, res: Response) => {
+  const book = req.validatedQuery as CreateBookSchema;
+
+  const createdBook = createBook(book);
+
+  res.status(201).json(createdBook);
 });
 
 app.listen(port, () => {

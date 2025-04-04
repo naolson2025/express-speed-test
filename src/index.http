@@ -19,7 +19,7 @@ POST http://localhost:3000/books
 content-type: application/json
 
 {
-  "title": "junk",
+  "title": "hello",
   "author": "F. Scott Fitzgerald",
   "genre": "Fiction",
   "price": 11.50
