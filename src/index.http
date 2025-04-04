@@ -27,4 +27,4 @@ content-type: application/json
 
 
 ### decoy
-http://localhost:3000/fake/1
+http://localhost:3000/fake/2/hello

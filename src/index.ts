@@ -5,6 +5,7 @@ import type { UUID } from 'crypto';
 import 'express';
 import { getBooksByIdValidator } from './schemas/get-book-by-id-schema';
 import { createBookValidator, type CreateBookSchema } from './schemas/create-book-schema';
+import decoys from './decoy-routes';
 
 declare module 'express' {
   export interface Request {
@@ -15,6 +16,8 @@ declare module 'express' {
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000;
+
+app.use('/', decoys);
 
 app.get('/', (req, res) => {
   res.send({ message: 'Hello World!' });
