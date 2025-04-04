@@ -8,7 +8,7 @@
     "start": "bun run dist/index.js",
     "benchmark:1": "autocannon -c 100 -d 5 -p 10 http://localhost:3000",
     "benchmark:2": "autocannon -c 100 -d 5 -p 10 http://localhost:3000/books?minPrice=200",
-    "benchmark:3": "autocannon -c 100 -d 5 -p 10 http://localhost:3000/books/0de992c4-6f81-4c59-bb58-020bb5029a4b",
+    "benchmark:3": "autocannon -c 100 -d 5 -p 10 http://localhost:3000/books/c9ceb851-f765-44b7-97c7-a0532f8a6afe",
     "benchmark:4": "autocannon -c 100 -d 5 -p 10 -m POST -H 'content-type=application/json' -b '{\"title\": \"benchmark\", \"author\": \"mr bench\", \"genre\": \"benchy\", \"price\": 10}' http://localhost:3000/books"
   },
   "devDependencies": {
