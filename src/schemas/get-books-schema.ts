@@ -1,12 +1,5 @@
 import type { NextFunction, Request, Response } from 'express';
-import { Schema, z } from 'zod';
-import 'express';
-
-declare module 'express' {
-  export interface Request {
-    validatedQuery?: Record<string, any>;
-  }
-}
+import { z } from 'zod';
 
 export const schema = z
   .object({
