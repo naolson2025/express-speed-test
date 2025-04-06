@@ -1,13 +1,17 @@
 http://localhost:3000
 
-###
+### Query params
 
 http://localhost:3000/books?minPrice=200&maxPrice=300
 
+### Bad query params
+
+http://localhost:3000/books?minPrice=200&maxPrice=hello
+
 
 ###
 
-http://localhost:3000/books/bf2f993c-80d1-498d-8a08-d5f5557a2188
+http://localhost:3000/books/abfab189-cc71-4453-91ca-3c9d95b39bd1
 
 
 ### bad book id
